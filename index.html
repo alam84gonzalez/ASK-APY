@@ -19,11 +19,29 @@
             margin: 0;
         }
         </style>
+		<style>
+#logo {
+position: absolute;
+top: 10px;
+right: 10px;
+z-index: 1000;
+background: white;
+padding: 6px;
+border-radius: 6px;
+box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+#logo img{
+height: 60px;
+}
+</style>
         <title></title>
     </head>
     <body>
-        <div id="map">
-        </div>
+        <div id="map"> </div>
+		<div id="logo">
+<img src="ask_logo.png" alt="Amigos de Sian Ka'an">
+</div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
