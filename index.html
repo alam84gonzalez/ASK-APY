@@ -19,29 +19,11 @@
             margin: 0;
         }
         </style>
-		<style>
-#logo {
-position: absolute;
-top: 10px;
-right: 10px;
-z-index: 1000;
-background: white;
-padding: 6px;
-border-radius: 6px;
-box-shadow: 0 0 6px rgba(0,0,0,0.3);
-}
-
-#logo img{
-height: 60px;
-}
-</style>
         <title></title>
     </head>
     <body>
-        <div id="map"> </div>
-		<div id="logo">
-<img src="ask_logo.png" alt="Amigos de Sian Ka'an">
-</div>
+        <div id="map">
+        </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
@@ -58,7 +40,7 @@ height: 60px;
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[18.331480776932683,-90.04179240556661],[21.063684573200984,-85.8645955521043]]);
+        }).fitBounds([[18.88855078431007,-89.51070905074484],[20.809004622746453,-86.6975851455561]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -219,9 +201,6 @@ height: 60px;
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Nombre'] !== null ? autolinker.link(String(feature.properties['Nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Tipo_unidad'] !== null ? autolinker.link(String(feature.properties['Tipo_unidad']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Organización_APY</th>\
